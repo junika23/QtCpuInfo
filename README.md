@@ -6,27 +6,26 @@ A small Qt application (QtQuick, QML and c++) which:
 - display the data model as TreeView UI (based on ListView),
 - and optionally, automatic refresh the CPU MHz information (supported only in Linux)
 
-Example of "cat /proc/cpuinfo" with 2 CPU cores:
-<code>
-processor	: 0\n
-vendor_id	: GenuineIntel\n
-cpu family	: 6\n
-model		: 62\n
-model name	: Intel(R) Xeon(R) CPU E5-1650 v2 @ 3.50GHz\n
-stepping	: 4\n
-microcode	: 0x416\n
-cpu MHz		: 1217.617\n
-cache size	: 12288 KB\n
-physical id	: 0\n
-siblings	: 12\n
-core id		: 0\n
-cpu cores	: 6\n
-apicid		: 0\n
-initial apicid	: 0\n
-fpu		: yes\n
-fpu_exception	: yes\n
-cpuid level	: 13\n
-wp		: yes\n
+Example of "cat /proc/cpuinfo" with 4 CPU cores:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-1650 v2 @ 3.50GHz
+stepping	: 4
+microcode	: 0x416
+cpu MHz		: 1217.617
+cache size	: 12288 KB
+physical id	: 0
+siblings	: 12
+core id		: 0
+cpu cores	: 6
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
 flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm epb tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms xsaveopt dtherm ida arat pln pts
 bugs		:
 bogomips	: 6982.97
@@ -115,10 +114,8 @@ clflush size	: 64
 cache_alignment	: 64
 address sizes	: 46 bits physical, 48 bits virtual
 power management:
-<code>
 
 Example of "sysctl -a | grep machdep.cpu" with 2 CPU cores:
-<code>
 machdep.cpu.max_basic: 13
 machdep.cpu.max_ext: 2147483656
 machdep.cpu.vendor: GenuineIntel
@@ -173,6 +170,5 @@ machdep.cpu.address_bits.physical: 39
 machdep.cpu.address_bits.virtual: 48
 machdep.cpu.core_count: 2
 machdep.cpu.thread_count: 4
-<code>
 
 All of above data will be proceed and displayed as tree view. Each CPU core will be represented as parent tree entry.
