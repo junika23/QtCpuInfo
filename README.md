@@ -10,7 +10,7 @@ Pre-requirements:
 1) Linux system 32 or 64 bit e.g. Ubuntu
 2) git 
 How to install: 
-e.g. Ubuntu via: 
+on Ubuntu via: 
 ```
 sudo apt-get install git
 ```
@@ -30,12 +30,11 @@ install wherever and whatever you want e.g. Qt 5.8 Linux gcc and QtCreator tool.
 How to build:
 1) Get the repository cloned locally:
 ```
-cd <some folder>
 git checkout https://github.com/junika23/QtCpuInfo.git
 ```
 2. Compile the codes
 2.1. Using QtCreator IDE:
-- Open project -> select QtCpuInfo.pro file
+- Open project -> select "QtCpuInfo.pro" file
 - Select for example Desktop Qt 5.8.0 GCC 64 Bit with Debug and Release build type
 - Click "Configure project"
 - Compile and run application
