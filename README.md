@@ -36,6 +36,8 @@ git checkout https://github.com/junika23/QtCpuInfo.git
 2. Compile the codes
 2.1. Using QtCreator IDE:
 - Open project -> select QtCpuInfo.pro file
+- Select for example Desktop Qt 5.8.0 GCC 64 Bit with Debug and Release build type
+- Click "Configure project"
 - Compile and run application
 
 2.2 Using command line console:
