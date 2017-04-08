@@ -100,7 +100,7 @@ Item {
                 CheckBox {
                     id: autoRefresh
                     checked: false
-                    text: "CPU MHz refresh"
+                    text: "Auto refresh CPU MHz"
                     anchors.right: parent.right
                     anchors.verticalCenter: infoText.verticalCenter
 

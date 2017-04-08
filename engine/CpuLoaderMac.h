@@ -44,7 +44,7 @@ signals:
 
 private:
 
-    void setModelData( const QVector< CpuInfo >& data );
+    bool setModelData( const QVector< CpuInfo >& data );
     void setModelChildrenData( TreeModelItem* parent, const QVector< CpuInfo >& data );
 
 private:

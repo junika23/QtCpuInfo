@@ -49,7 +49,7 @@ protected Q_SLOTS:
 
 private:
 
-    void setModelData( const QVector< CpuInfo >& data );
+    bool setModelData( const QVector< CpuInfo >& data );
     void setModelChildernData( TreeModelItem* parent, const QVector<CpuInfo> &data, int& index );
 
 private:

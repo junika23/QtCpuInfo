@@ -38,7 +38,7 @@ public:
 
 signals:
 
-    void startDone( );
+    void startDone( bool success );
     void numberOfCores( int number );
     void autoRefreshDone( const QString& msg );
 

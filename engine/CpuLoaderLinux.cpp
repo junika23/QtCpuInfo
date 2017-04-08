@@ -74,10 +74,10 @@ CpuLoaderLinux::start( )
     QString stdOutput = process.readAllStandardOutput( );
 
     // Process the data and pass it to data model.
-    setModelData( processCpuInfo( stdOutput ) );
+    bool success = setModelData( processCpuInfo( stdOutput ) );
 
     // Notify UI that we are done.
-    emit startDone( );
+    emit startDone( success );
 }
 
 // -------------------------------------------------------------------------------------------------
@@ -108,7 +108,7 @@ CpuLoaderLinux::treeModel( ) const
 
 // -------------------------------------------------------------------------------------------------
 
-void
+bool
 CpuLoaderLinux::setModelData( const QVector< CpuInfo >& data )
 {
     if ( !data.isEmpty( ) )
@@ -143,7 +143,11 @@ CpuLoaderLinux::setModelData( const QVector< CpuInfo >& data )
 
         // Notify UI that the model has been changed/updated.
         emit modelChanged( );
+
+        return ( mModel->rowCount( ) > 0 );
     }
+
+    return false;
 }
 
 // -------------------------------------------------------------------------------------------------

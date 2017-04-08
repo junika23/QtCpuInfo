@@ -68,10 +68,10 @@ CpuLoaderMac::start( )
     QString stdOutput = process.readAllStandardOutput( );
 
     // Process the data and pass it to data model.
-    setModelData( processCpuInfo( stdOutput ) );
+    bool success = setModelData( processCpuInfo( stdOutput ) );
 
     // Notify UI that we are done.
-    emit startDone( );
+    emit startDone( success );
 }
 
 // -------------------------------------------------------------------------------------------------
@@ -79,10 +79,11 @@ CpuLoaderMac::start( )
 void
 CpuLoaderMac::setAutoRefresh( bool enable )
 {
-    Q_UNUSED( enable );
-
-    // Notify UI that we don't support CPU MHz auto refresh in Mac OS.
-    emit autoRefreshDone( "Not supported in Mac OS platform!" );
+    if ( enable )
+    {
+        // Notify UI that we don't support CPU MHz auto refresh in Mac OS.
+        emit autoRefreshDone( "Auto refresh CPU MHz is not supported in Mac OS platform!" );
+    }
 }
 
 // -------------------------------------------------------------------------------------------------
@@ -95,7 +96,7 @@ CpuLoaderMac::treeModel( ) const
 
 // -------------------------------------------------------------------------------------------------
 
-void
+bool
 CpuLoaderMac::setModelData( const QVector< CpuInfo >& data )
 {
     if ( !data.isEmpty( ) )
@@ -126,7 +127,11 @@ CpuLoaderMac::setModelData( const QVector< CpuInfo >& data )
 
             emit modelChanged( );
         }
+
+        return ( mModel->rowCount( ) > 0 );
     }
+
+    return false;
 }
 
 // -------------------------------------------------------------------------------------------------
